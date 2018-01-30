@@ -221,7 +221,8 @@ public class EmailExtStep extends AbstractStepImpl {
             triggered.put(AlwaysTrigger.TRIGGER_NAME, publisher.configuredTriggers.get(0));
             ctx.setTrigger(publisher.configuredTriggers.get(0));
             ctx.setTriggered(triggered);
-            publisher.sendMail(ctx);
+            //publisher.sendMail(ctx);
+            publisher.sendMailOverSSH(ctx, listener.getLogger());
             return null;
         }
     }
